@@ -10,7 +10,7 @@ pipeline {
             steps {
                 echo 'Checking out the main repository'
 				checkout([$class: 'GitSCM', 
-						  branches: [[name: '*/master']],
+						  branches: [[name: '${GIT_BRANCH}']],
 					 userRemoteConfigs: [[url: 'https://github.com/jpms-project/jenkins-test-project.git']]])
             }
         }
